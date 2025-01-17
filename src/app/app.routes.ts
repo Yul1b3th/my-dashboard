@@ -81,7 +81,14 @@ export const routes: Routes = [
   // Ruta por defecto
   {
     path: '',
-    redirectTo: '/dashboard',
+    // redirectTo: '/dashboard',
+    redirectTo: (route) => {
+      // Podemos inyectar un servicio
+      // const authService = inject(AuthService);
+      // if (authService.isLoggedIn) {
+      console.log(route);
+      return '/dashboard/material';
+    },
     pathMatch: 'full',
   },
 ];
