@@ -1,0 +1,13 @@
+<!--  user.component  -->
+<app-title title="Listado de usuarios" />
+<ul>
+  @for (user of userService.users(); track user.id){
+  <li class="flex items-center my-2 cursor-pointer">
+    <img class="roubded w-14" alt="user.first_name" [srcset]="user.avatar">
+    <a class="mx-5 hover:underline" [routerLink]="['/dashboard/user', user.id]">{{ user.first_name }} {{ user.last_name
+      }}</a>
+  </li>
+  } @empty {
+  <h3>Espere por favor</h3>
+  }
+</ul>
