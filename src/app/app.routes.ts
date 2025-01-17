@@ -66,6 +66,12 @@ export const routes: Routes = [
           import('./dashboard/pages/input-output/input-output.component'),
       },
       {
+        path: 'material',
+        title: 'Angular Material',
+        loadComponent: () =>
+          import('./dashboard/pages/material/material.component'),
+      },
+      {
         path: '',
         redirectTo: 'control-flow',
         pathMatch: 'full',
