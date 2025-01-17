@@ -52,8 +52,17 @@ export default class InputOutputComponent implements OnDestroy {
   }
 
   public updateProduct(product: Product, quantity: number) {
+    // Actualiza la lista de productos
     this.products.update((products) =>
-      products.map((p) => (p.id === product.id ? { ...p, quantity } : p)),
+      // Itera sobre la lista de productos
+      products.map((p) =>
+        // Si el id del producto coincide con el id del producto que se desea actualizar
+        p.id === product.id
+          ? // Retorna una nueva versión del producto con la cantidad actualizada
+            { ...p, quantity }
+          : // Si no coincide, retorna el producto sin cambios
+            p,
+      ),
     );
   }
 }
